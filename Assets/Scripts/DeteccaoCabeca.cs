@@ -27,6 +27,7 @@ public class DeteccaoCabeca : MonoBehaviour
         if (pointer != null)
         {
             pointer.DestinationMarkerHover += DestinationMarkerHover;
+            pointer.DestinationMarkerExit += DestinationMarkerExit;
         }
         else
         {
@@ -41,6 +42,7 @@ public class DeteccaoCabeca : MonoBehaviour
         if (pointer != null)
         {
             pointer.DestinationMarkerHover -= DestinationMarkerHover;
+            pointer.DestinationMarkerExit -= DestinationMarkerExit;
         }
     }
 
@@ -58,6 +60,14 @@ public class DeteccaoCabeca : MonoBehaviour
     {
         //se o evento está ativo, vamos setar os textos da distância e do nome do objeto na tela
        SetTexts(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "POINTER HOVER", e.target, e.raycastHit, e.distance, e.destinationPosition);
+    }
+
+    //evento disparado toda vez que o ponteiro sair de algum objeto na tela que estava sendo mirado
+    private void DestinationMarkerExit(object sender, DestinationMarkerEventArgs e)
+    {
+        //se o evento disparar, são limpas as informações da tela
+        this.distance.text = "";
+        objectName.text = "";
     }
 
     //método responsável por modificar os textos de distancia entre o usuário e o objeto mirado e o nome do objeto mirado
