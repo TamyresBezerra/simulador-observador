@@ -5,7 +5,7 @@
 - Versão da Unity3D: **2019.2.16f1**
 
 
-## Estrutura do Projeto:
+## Estrutura do Projeto (pastas importantes):
 
 1. Assets/Scripts
 - Scripts do simulador
@@ -13,3 +13,5 @@
 - Cena principal do simulador
 3. Assets
 - Demais bibliotecas e itens utilizados no simulador
+4. Documentos
+- Documentação do projeto (Projeto Final de Programacao.pdf)
